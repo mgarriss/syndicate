@@ -1,0 +1,45 @@
+$light-grey: #aaaaaa
+$orange: #ff6600
+$thick: 10px
+  
+@mixin setup
+  color: $light-grey
+  margin: 0
+  padding: 0
+
+body.bp
+  margin: 0
+  padding: 0
+  border: 1px solid $orange
+  font-size: 15px
+  margin: $thick * 4
+  padding: $thick
+  background-color: black
+  color: $light-grey
+  
+  a:link, a:visited
+    color: $orange
+    
+  #content
+    padding-bottom: $thick * 2
+    
+  h1
+    +setup
+    margin-top: $thick
+    margin-bottom: $thick
+  h2
+    +setup
+    margin-top: $thick
+    margin-bottom: $thick
+      
+  form.bp
+    input
+      font-size: 1.1em
+      background-color: $light-grey
+      font-weight: bold
+
+.spaced
+  margin: $thick
+.right
+  float: right
+    
