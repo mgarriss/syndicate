@@ -1,6 +1,5 @@
 Syndicate::Application.routes.draw do |map|
   devise_for :users
-
   resources :users
 
   # The priority is based upon order of creation:
