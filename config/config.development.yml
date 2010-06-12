@@ -5,3 +5,5 @@ admins:
   -
     email: jason@example.com
     password: password
+    
+eve_version: tyr10

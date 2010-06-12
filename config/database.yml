@@ -1,6 +1,8 @@
+# must be mysql
+
 development:
     database: syndicate_dev 
-    adapter: mysql 
+    adapter: mysql  
     hostname: localhost 
     username: root 
     password:
@@ -12,11 +14,3 @@ test:
     username: root
     password:
     pool: 5
-    
-# production:
-#   adapter:   mysql
-#   database:  audi_ims_production
-#   username:  deploy
-#   password:  sgb5wI4G5l
-#   host:      ec2-174-129-147-0.compute-1.amazonaws.com
-#   pool:      15
