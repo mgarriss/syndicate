@@ -8,3 +8,8 @@ Factory.define :user do |f|
   f.email { Factory.next(:email) }
   f.password "password"
 end
+
+Factory.define :admin do |f|
+  f.email { Factory.next(:email) }
+  f.password "password"
+end

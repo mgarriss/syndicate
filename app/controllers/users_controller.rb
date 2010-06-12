@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_admin!, :only => [:new, :create, :destroy]
+  
   def index
     @users = User.all
   end
@@ -12,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = (admin_signed_in? ? User.find(params[:id]) : current_user)
   end
 
   def create
@@ -20,17 +22,20 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to(@user, :notice => 'User was successfully created.')
     else
-      p @user.errors.full_messages
       render :action => "new"
     end
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
-      redirect_to(@user, :notice => 'User was successfully updated.')
+    if admin_signed_in? or current_user.id == params[:id].to_i
+      @user = User.find(params[:id])
+      if @user.update_attributes(params[:user])
+        redirect_to(@user, :notice => 'User was successfully updated.')
+      else
+        render :action => "edit"
+      end
     else
-      render :action => "edit"
+      redirect_to(current_user, :alert => 'User was not successfully updated.')
     end
   end
 

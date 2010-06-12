@@ -1,6 +1,7 @@
 Syndicate::Application.routes.draw do |map|
-  devise_for :users
+  devise_for :users, :admins
   resources :users
+  resources :admins, :only => [:index, :show, :edit, :update]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
