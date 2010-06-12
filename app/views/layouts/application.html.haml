@@ -1,0 +1,14 @@
+!!! XML
+!!!
+%html
+  %head
+    %title= @title ? "syndicate - #{@title}" : "syndicate"
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+    = yield(:head)
+  %body
+    #wrapper
+      #title
+        %h1 syndicate
+      = yield
