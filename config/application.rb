@@ -44,3 +44,5 @@ module Syndicate
     config.filter_parameters += [:password]
   end
 end
+
+APP_CONFIG = YAML.load_file(File.join( Rails.root, 'config', "config.#{Rails.env}.yml"))

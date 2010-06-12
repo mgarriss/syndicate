@@ -567,11 +567,15 @@ body.bp {
 body.bp a:link, body.bp a:visited {
   color: #ff6600;
 }
-/* line 23, ../../../app/stylesheets/partials/_screen.sass */
+/* line 22, ../../../app/stylesheets/partials/_screen.sass */
+body.bp a:hover {
+  text-decoration: none;
+}
+/* line 25, ../../../app/stylesheets/partials/_screen.sass */
 body.bp #content {
   padding-bottom: 20px;
 }
-/* line 26, ../../../app/stylesheets/partials/_screen.sass */
+/* line 28, ../../../app/stylesheets/partials/_screen.sass */
 body.bp h1 {
   color: #aaaaaa;
   margin: 0;
@@ -579,7 +583,7 @@ body.bp h1 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 30, ../../../app/stylesheets/partials/_screen.sass */
+/* line 32, ../../../app/stylesheets/partials/_screen.sass */
 body.bp h2 {
   color: #aaaaaa;
   margin: 0;
@@ -587,19 +591,19 @@ body.bp h2 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 36, ../../../app/stylesheets/partials/_screen.sass */
+/* line 38, ../../../app/stylesheets/partials/_screen.sass */
 body.bp form.bp input {
   font-size: 1.1em;
   background-color: #aaaaaa;
   font-weight: bold;
 }
 
-/* line 41, ../../../app/stylesheets/partials/_screen.sass */
+/* line 43, ../../../app/stylesheets/partials/_screen.sass */
 .spaced {
   margin: 10px;
 }
 
-/* line 43, ../../../app/stylesheets/partials/_screen.sass */
+/* line 45, ../../../app/stylesheets/partials/_screen.sass */
 .right {
   float: right;
 }

@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+APP_CONFIG['admins'].each do |admin|
+  Admin.create(admin) rescue (puts "not adding: #{admin['email']}")
+end

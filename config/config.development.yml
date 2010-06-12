@@ -1,0 +1,7 @@
+admins:
+  -
+    email: mike@example.com
+    password: password 
+  -
+    email: jason@example.com
+    password: password
