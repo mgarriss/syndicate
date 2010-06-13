@@ -1,4 +1,5 @@
 %table.regions
   %tr
-    %th name
+    %th= sort_link(:regionID, 'id')
+    %th= sort_link(:regionName, 'region')
   = render @regions    
