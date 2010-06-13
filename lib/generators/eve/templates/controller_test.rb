@@ -11,7 +11,7 @@ class <%= file_name.pluralize.camelize %>ControllerTest < ActionController::Test
   should "get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:regions)
+    assert_not_nil assigns(:<%= file_name.pluralize %>)
   end
 
   should "get show <%= file_name.gsub(/_/,' ') %>" do

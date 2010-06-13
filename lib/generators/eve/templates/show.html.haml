@@ -1,6 +1,6 @@
 %h2
   <%= file_name.gsub(/_/,' ') %> .
-  = @<%= file_name %>.<%= EveSql.name_column %>.downcase
+  = @<%= file_name %>.<%= EveSql.name_column(eve_table_name) %>.downcase
   = '.'
   %span.back_to= link_to('<<', <%= file_name.pluralize %>_path)
 
@@ -9,3 +9,8 @@
   %p
     %label id
     %span.value= @<%= file_name %>.id
+<% eve_columns.each do |col| %>
+  %p
+    %label <%= col.underscore.sub(/_/,' ') %>
+    %span.value= @<%= file_name %>.<%= col %>
+<% end %>

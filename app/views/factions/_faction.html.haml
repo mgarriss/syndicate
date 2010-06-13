@@ -1,3 +1,6 @@
 %tr[faction]
   %td= link_to(faction.id, faction_path(faction))
   %td= faction.factionName.downcase
+
+  %td= truncate(faction.stationCount.to_s, :length => 25)
+

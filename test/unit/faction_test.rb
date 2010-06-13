@@ -1,6 +1,8 @@
 require 'test_helper'
 
-class RegionTest < ActiveSupport::TestCase
+EveSql.load 'tyr10-chrFactions-mysql5-v1.sql'
+
+class FactionTest < ActiveSupport::TestCase
   context "creation" do
     setup do
       @faction = Factory(:faction)

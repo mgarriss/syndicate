@@ -1,0 +1,12 @@
+%h2
+  universe .
+  = @universe.universeName.downcase
+  = '.'
+  %span.back_to= link_to('<<', universes_path)
+
+
+%div[@universe]
+  %p
+    %label id
+    %span.value= @universe.id
+

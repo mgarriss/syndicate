@@ -2,4 +2,7 @@
   %tr
     %th= sort_link(:<%= EveSql.primary_key(eve_table_name) %>, 'id')
     %th= sort_link(:<%= EveSql.name_column(eve_table_name) %>, 'name')
+  <% eve_columns.each do |col| %>
+    %th= sort_link(:<%= col %>, '<%= col.underscore.gsub(/_/,' ') %>')
+  <% end %>
   = render @<%= file_name.pluralize %>

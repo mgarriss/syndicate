@@ -1,5 +1,8 @@
 %table.factions
   %tr
     %th= sort_link(:factionID, 'id')
-    %th= sort_link(:factionName, 'faction')
-  = render @factions    
+    %th= sort_link(:factionName, 'name')
+  
+    %th= sort_link(:stationCount, 'station count')
+  
+  = render @factions

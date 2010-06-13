@@ -1,3 +1,6 @@
 %tr[<%= file_name %>]
   %td= link_to(<%= file_name %>.id, <%= file_name %>_path(<%= file_name %>))
   %td= <%= file_name %>.<%= EveSql.name_column(eve_table_name) %>.downcase
+<% eve_columns.each do |col| %>
+  %td= truncate(<%= file_name %>.<%= col %>.to_s, :length => 25)
+<% end %>
