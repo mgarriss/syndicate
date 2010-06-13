@@ -1,5 +1,5 @@
 %tr[constellation]
   %td= link_to(constellation.id, constellation_path(constellation))
   %td= constellation.constellationName.downcase
-  %td= constellation.security_avg
+  %td= constellation.security_avg.round(2)
   %td= constellation.systems_count

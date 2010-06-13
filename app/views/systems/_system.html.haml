@@ -1,4 +1,10 @@
 %tr[system]
   %td= link_to(system.id, system_path(system))
   %td= system.solarSystemName.downcase
-  %td= system.security
+  %td= system.security.round(2)
+  %td= system.border
+  %td= system.fringe
+  %td= system.corridor
+  %td= system.hub
+  %td= system.international
+  %td= system.regional

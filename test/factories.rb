@@ -28,3 +28,7 @@ Factory.define :system do |f|
   f.sequence(:solarSystemID) {|n| n}
   f.sequence(:solarSystemName) {|n| "system#{n}"}
 end
+
+Factory.define :faction do |f|
+  f.sequence(:factionID) {|n| n}
+end

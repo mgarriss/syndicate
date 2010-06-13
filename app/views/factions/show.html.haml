@@ -1,0 +1,11 @@
+%h2
+  faction .
+  = @region.factionName.downcase
+  = '.'
+  %span.back_to= link_to('<<', factions_path)
+
+
+%div[@faction]
+  %p
+    %label id
+    %span.value= @faction.id
