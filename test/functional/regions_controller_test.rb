@@ -17,5 +17,8 @@ class RegionsControllerTest < ActionController::TestCase
   should "show region" do
     get :show, :id => @region.to_param
     assert_response :success
+    assert_not_nil assigns(:region)
+    assert_not_nil assigns(:constellations)
+    assert_not_nil assigns(:systems)
   end
 end

@@ -1,0 +1,12 @@
+%h2
+  system .
+  = @system.solarSystemName.downcase
+  = '.'
+  %span.back_to= link_to('<<', systems_path)
+
+
+%div[@system]
+  %p
+    %label id
+    %span.value= @system.id
+    

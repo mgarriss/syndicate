@@ -1,0 +1,5 @@
+%table.constellations
+  %tr
+    %th= sort_link(:constellationID, 'id')
+    %th= sort_link(:constellationName, 'constellation')
+  = render @constellations    

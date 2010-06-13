@@ -1,0 +1,12 @@
+%h2
+  region .
+  = @constellation.constellationName.downcase
+  = '.'
+  %span.back_to= link_to('<<', constellations_path)
+
+
+%div[@constellation]
+  %p
+    %label id
+    %span.value= @constellation.id
+    

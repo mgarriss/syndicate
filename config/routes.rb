@@ -4,6 +4,8 @@ Syndicate::Application.routes.draw do |map|
   resources :admins, :only => [:index, :show, :edit, :update]
   
   resources :regions, :only => [:index, :show]
+  resources :constellations, :only => [:index, :show]
+  resources :systems, :only => [:index, :show]
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

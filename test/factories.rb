@@ -16,4 +16,15 @@ end
 
 Factory.define :region do |f|
   f.sequence(:regionID) {|n| n}
+  f.sequence(:regionName) {|n| "region#{n}"}
+end
+
+Factory.define :constellation do |f|
+  f.sequence(:constellationID) {|n| n}
+  f.sequence(:constellationName) {|n| "constellation#{n}"}
+end
+
+Factory.define :system do |f|
+  f.sequence(:solarSystemID) {|n| n}
+  f.sequence(:solarSystemName) {|n| "system#{n}"}
 end
