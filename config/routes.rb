@@ -1,4 +1,6 @@
 Syndicate::Application.routes.draw do |map|
+  resources :groups, :only => [:index, :show]
+
   resources :universes, :only => [:index, :show]
 
   devise_for :users, :admins

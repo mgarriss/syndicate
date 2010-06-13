@@ -1,2 +1,6 @@
+= will_paginate @<%= file_name.pluralize %>
+
 %h2 <%= file_name.pluralize.gsub(/_/,' ') %>
 = render 'index'
+
+= will_paginate @<%= file_name.pluralize %>

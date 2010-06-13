@@ -5,6 +5,7 @@ EveSql.load 'tyr10-<%= eve_table_name %>-mysql5-v1.sql'
 class <%= file_name.camelize %>Test < ActiveSupport::TestCase
   context "creation" do
     setup do
+      <%= file_name.camelize %>.delete_all
       @<%= file_name %> = Factory(:<%= file_name %>)
     end
     

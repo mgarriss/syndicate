@@ -18,7 +18,7 @@ CREATE TABLE `admins` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_admins_on_email` (`email`),
   UNIQUE KEY `index_admins_on_unlock_token` (`unlock_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `chrFactions` (
   `factionID` int(11) NOT NULL,
@@ -35,6 +35,24 @@ CREATE TABLE `chrFactions` (
   KEY `solarSystemID` (`solarSystemID`),
   KEY `corporationID` (`corporationID`),
   KEY `militiaCorporationID` (`militiaCorporationID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `invGroups` (
+  `groupID` smallint(6) NOT NULL,
+  `categoryID` tinyint(3) unsigned DEFAULT NULL,
+  `groupName` varchar(100) DEFAULT NULL,
+  `description` varchar(3000) DEFAULT NULL,
+  `graphicID` smallint(6) DEFAULT NULL,
+  `useBasePrice` tinyint(1) DEFAULT NULL,
+  `allowManufacture` tinyint(1) DEFAULT NULL,
+  `allowRecycler` tinyint(1) DEFAULT NULL,
+  `anchored` tinyint(1) DEFAULT NULL,
+  `anchorable` tinyint(1) DEFAULT NULL,
+  `fittableNonSingleton` tinyint(1) DEFAULT NULL,
+  `published` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`groupID`),
+  KEY `invGroups_IX_category` (`categoryID`),
+  KEY `graphicID` (`graphicID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `mapConstellations` (
@@ -181,7 +199,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`),
   UNIQUE KEY `index_users_on_unlock_token` (`unlock_token`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO schema_migrations (version) VALUES ('20100612151116');
 

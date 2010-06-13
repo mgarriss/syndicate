@@ -47,17 +47,7 @@ Factory.define :universe do |f|
   f.sequence(:universeName) {|n| "universe#{n}"}
 end
 
-Factory.define :universe do |f|
-  f.sequence(:factionsID) {|n| n}
-  f.sequence(:factionsName) {|n| "universe#{n}"}
-end
-
-Factory.define :faction do |f|
-  f.sequence(:factionsID) {|n| n}
-  f.sequence(:factionsName) {|n| "faction#{n}"}
-end
-
-Factory.define :faction do |f|
-  f.sequence(:factionsID) {|n| n}
-  f.sequence(:factionName) {|n| "faction#{n}"}
+Factory.define :group do |f|
+  f.sequence(:groupID) {|n| n}
+  f.sequence(:groupName) {|n| "group#{n}"}
 end

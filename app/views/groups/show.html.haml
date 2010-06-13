@@ -1,0 +1,24 @@
+%h2
+  group .
+  = @group.groupName.downcase
+  = '.'
+  %span.back_to= link_to('<<', groups_path)
+
+
+%div[@group]
+  %p
+    %label id
+    %span.value= @group.id
+
+  %p
+    %label use base_price
+    %span.value= @group.useBasePrice
+
+  %p
+    %label allow manufacture
+    %span.value= @group.allowManufacture
+
+  %p
+    %label description
+    %span.value= @group.description
+
