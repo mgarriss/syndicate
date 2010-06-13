@@ -1,9 +1,9 @@
 require 'test_helper'
 
-EveSql.load 'tyr10-mapConstellations-mysql5-v1.sql'
-
 class ConstellationsControllerTest < ActionController::TestCase
   setup do
+    Constellation.delete_all
+    Region.delete_all
     user_sign_in
     @constellation = Factory(:constellation)
   end

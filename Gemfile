@@ -9,8 +9,13 @@ gem 'haml'
 gem 'compass'
 gem 'will_paginate'
 
+group :development do
+  gem "rails3-generators"
+end
+
 group :test do
-  gem 'shoulda', :git => 'http://github.com/thoughtbot/shoulda.git' #, :branch => 'rails3'
-  gem 'webrat'
-  gem 'factory_girl_rails'
+ gem 'shoulda', :git => 'http://github.com/thoughtbot/shoulda.git', :branch => 'rails3'
+ gem 'webrat'
+ # gem 'factory_girl', :git => 'http://github.com/thoughtbot/factory_girl.git', :branch => 'rails3'
+ gem 'factory_girl_rails'
 end

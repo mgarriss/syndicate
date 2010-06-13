@@ -1,9 +1,8 @@
 require 'test_helper'
 
-EveSql.load 'tyr10-chrFactions-mysql5-v1.sql'
-
 class FactionsControllerTest < ActionController::TestCase
   setup do
+    Faction.delete_all
     user_sign_in
     @faction = Factory(:faction)
   end

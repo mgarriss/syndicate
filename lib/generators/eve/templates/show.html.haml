@@ -1,0 +1,11 @@
+%h2
+  <%= file_name.gsub(/_/,' ') %> .
+  = @<%= file_name %>.<%= EveSql.name_column %>.downcase
+  = '.'
+  %span.back_to= link_to('<<', <%= file_name.pluralize %>_path)
+
+
+%div[@<%= file_name %>]
+  %p
+    %label id
+    %span.value= @<%= file_name %>.id

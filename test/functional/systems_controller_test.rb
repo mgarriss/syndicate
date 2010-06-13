@@ -1,9 +1,8 @@
 require 'test_helper'
 
-EveSql.load 'tyr10-mapSolarSystems-mysql5-v1.sql'
-
 class SystemsControllerTest < ActionController::TestCase
   setup do
+    System.delete_all
     user_sign_in
     @system = Factory(:system)
   end

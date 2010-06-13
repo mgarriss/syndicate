@@ -9,24 +9,14 @@ Dir[File.join(Rails.root,'db','eve',APP_CONFIG['eve_version']) + "/*.sql"].each 
   EveSql.load_absolute file
 end
 
-class AddCounts < ActiveRecord::Migration
-  def self.up
-    add_column :mapRegions, :constellations_count, :integer, :null => false
-    add_column :mapRegions, :systems_count, :integer, :null => false
-    
-    add_column :mapConstellations, :systems_count, :integer, :null => false
-  end
-end
+conn = ActiveRecord::Base.connection
 
-class AddSecurityAvg < ActiveRecord::Migration
-  def self.up
-    add_column :mapRegions, :security_avg, :double, :null => false
-    add_column :mapConstellations, :security_avg, :double, :null => false
-  end
-end
+conn.add_column :mapRegions, :constellations_count, :integer
+conn.add_column :mapRegions, :systems_count, :integer
 
-AddCounts.up
-AddSecurityAvg.up
+conn.add_column :mapConstellations, :systems_count, :integer
+conn.add_column :mapRegions, :security_avg, :double
+conn.add_column :mapConstellations, :security_avg, :double
 
 Region.reset_column_information
 Constellation.reset_column_information

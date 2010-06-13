@@ -1,9 +1,8 @@
 require 'test_helper'
 
-EveSql.load 'tyr10-mapRegions-mysql5-v1.sql'
-
 class RegionsControllerTest < ActionController::TestCase
   setup do
+    Region.delete_all
     user_sign_in
     @region = Factory(:region)
   end

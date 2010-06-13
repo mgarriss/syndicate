@@ -1,0 +1,5 @@
+%table.<%= file_name.pluralize %>
+  %tr
+    %th= sort_link(:<%= EveSql.primary_key(eve_table_name) %>, 'id')
+    %th= sort_link(:<%= EveSql.name_column(eve_table_name) %>, 'name')
+  = render @<%= file_name.pluralize %>

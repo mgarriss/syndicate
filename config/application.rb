@@ -34,9 +34,18 @@ module Syndicate
     # config.generators do |g|
     #   g.orm             :active_record
     #   g.template_engine :erb
-    #   g.test_framework  :test_unit, :fixture => true
     # end
-
+    
+    config.active_record.schema_format = :sql 
+    
+    # config.generators do |g|
+    #   g.template_engine :haml
+    #   g.test_framework  :shoulda
+    #   g.fixture_replacement :factory_girl
+      
+    #   g.fallbacks[:shoulda] = :test_unit
+    # end
+    
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 

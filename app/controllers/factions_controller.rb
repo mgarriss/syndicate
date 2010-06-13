@@ -6,6 +6,6 @@ class FactionsController < ApplicationController
   end
   
   def show
-    @faction = Faction.includes(:constellations,:systems).find(params[:id])
+    @faction = Faction.find(params[:id])
   end
 end
