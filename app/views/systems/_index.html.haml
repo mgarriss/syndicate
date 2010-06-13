@@ -1,5 +1,6 @@
 %table.systems
   %tr
     %th= sort_link(:systemID, 'id')
-    %th= sort_link(:systemName, 'system')
+    %th= sort_link(:solarSystemName, 'name')
+    %th= sort_link(:security, 'security')
   = render @systems    

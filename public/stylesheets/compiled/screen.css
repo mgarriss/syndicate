@@ -592,19 +592,27 @@ body.bp h2 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 39, ../../../app/stylesheets/partials/_screen.sass */
+/* line 37, ../../../app/stylesheets/partials/_screen.sass */
+body.bp h3 {
+  color: #aaaaaa;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* line 43, ../../../app/stylesheets/partials/_screen.sass */
 body.bp form.bp input {
   font-size: 1.1em;
   background-color: #aaaaaa;
   font-weight: bold;
 }
 
-/* line 44, ../../../app/stylesheets/partials/_screen.sass */
+/* line 48, ../../../app/stylesheets/partials/_screen.sass */
 .spaced {
   margin: 10px;
 }
 
-/* line 46, ../../../app/stylesheets/partials/_screen.sass */
+/* line 50, ../../../app/stylesheets/partials/_screen.sass */
 .right {
   float: right;
 }

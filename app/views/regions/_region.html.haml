@@ -1,3 +1,6 @@
 %tr[region]
   %td= link_to(region.id, region_path(region))
   %td= region.regionName.downcase
+  %td= region.security_avg
+  %td= region.constellations_count
+  %td= region.systems_count

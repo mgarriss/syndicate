@@ -6,7 +6,7 @@ class RegionsController < ApplicationController
   end
   
   def show
-    @region = Region.includes(:constellations).find(params[:id])
+    @region = Region.includes(:constellations,:systems).find(params[:id])
     @constellations = @region.constellations.all
     @systems = @region.systems.all
   end

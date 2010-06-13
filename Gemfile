@@ -7,6 +7,7 @@ gem 'ruby-debug'
 gem "devise", :git => "git://github.com/plataformatec/devise.git"
 gem 'haml'
 gem 'compass'
+gem 'will_paginate'
 
 group :test do
   gem 'shoulda', :git => 'http://github.com/thoughtbot/shoulda.git' #, :branch => 'rails3'
