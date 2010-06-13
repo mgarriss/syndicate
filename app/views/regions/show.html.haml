@@ -1,1 +1,12 @@
-this
+%h2
+  region .
+  = @region.regionName.downcase
+  = '.'
+  %span.back_to= link_to('<<', regions_path)
+
+
+%div[@region]
+  %p
+    %label id
+    %span.value= @region.id
+    
