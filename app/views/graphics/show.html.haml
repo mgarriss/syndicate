@@ -1,0 +1,28 @@
+%h2
+  graphic .
+  = @graphic.id
+  = '.'
+  %span.back_to= link_to('<<', graphics_path)
+
+
+%div[@graphic]
+  %p
+    %label url3 d
+    %span.value= @graphic.url3D
+
+  %p
+    %label url web
+    %span.value= @graphic.urlWeb
+
+  %p
+    %label description
+    %span.value= @graphic.description
+
+  %p
+    %label icon
+    %span.value= @graphic.icon
+
+  %p
+    %label url sound
+    %span.value= @graphic.urlSound
+

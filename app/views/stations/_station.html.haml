@@ -1,0 +1,11 @@
+%tr[station]
+  %td= link_to(station.id, station_path(station))
+
+  %td= truncate(station.security.to_s, :length => 25)
+
+  %td= truncate(station.dockingCostPerVolume.to_s, :length => 25)
+
+  %td= truncate(station.maxShipVolumeDockable.to_s, :length => 25)
+
+  %td= truncate(station.officeRentalCost.to_s, :length => 25)
+

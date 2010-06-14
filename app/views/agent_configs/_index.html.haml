@@ -1,0 +1,10 @@
+%table.agent_configs
+  %tr
+    %th= sort_link(:configID, 'id')
+    %th= sort_link(:configName, 'name')
+  
+    %th= sort_link(:k, 'k')
+  
+    %th= sort_link(:v, 'v')
+  
+  = render @agent_configs

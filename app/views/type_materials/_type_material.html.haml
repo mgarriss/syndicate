@@ -1,0 +1,5 @@
+%tr[type_material]
+  %td= link_to(type_material.id, type_material_path(type_material))
+
+  %td= truncate(type_material.quantity.to_s, :length => 25)
+

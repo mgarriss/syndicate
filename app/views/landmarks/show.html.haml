@@ -1,0 +1,16 @@
+%h2
+  landmark .
+  = @landmark.id
+  = '.'
+  %span.back_to= link_to('<<', landmarks_path)
+
+
+%div[@landmark]
+  %p
+    %label url2d
+    %span.value= @landmark.url2d
+
+  %p
+    %label description
+    %span.value= @landmark.description
+

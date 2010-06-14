@@ -1,0 +1,16 @@
+%table.graphics
+  %tr
+    %th= sort_link(:graphicID, 'id')
+    %th= sort_link(:graphicName, 'name')
+  
+    %th= sort_link(:url3D, 'url3 d')
+  
+    %th= sort_link(:urlWeb, 'url web')
+  
+    %th= sort_link(:description, 'description')
+  
+    %th= sort_link(:icon, 'icon')
+  
+    %th= sort_link(:urlSound, 'url sound')
+  
+  = render @graphics

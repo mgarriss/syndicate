@@ -1,0 +1,12 @@
+%h2
+  eve name .
+  = @eve_name.itemName
+  = '.'
+  %span.back_to= link_to('<<', eve_names_path)
+
+
+%div[@eve_name]
+  %p
+    %label id
+    %span.value= @eve_name.id
+

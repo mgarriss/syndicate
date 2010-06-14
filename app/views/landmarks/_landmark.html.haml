@@ -1,0 +1,7 @@
+%tr[landmark]
+  %td= link_to(landmark.id, landmark_path(landmark))
+
+  %td= truncate(landmark.url2d.to_s, :length => 25)
+
+  %td= truncate(landmark.description.to_s, :length => 25)
+

@@ -1,0 +1,7 @@
+%tr[station_type]
+  %td= link_to(station_type.id, station_type_path(station_type))
+
+  %td= truncate(station_type.officeSlots.to_s, :length => 25)
+
+  %td= truncate(station_type.conquerable.to_s, :length => 25)
+

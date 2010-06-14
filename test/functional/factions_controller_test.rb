@@ -1,7 +1,5 @@
 require 'test_helper'
 
-EveSql.load 'tyr10-chrFactions-mysql5-v1.sql'
-
 class FactionsControllerTest < ActionController::TestCase
   setup do
     user_sign_in

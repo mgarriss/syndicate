@@ -1,0 +1,7 @@
+%tr[agent]
+  %td= link_to(agent.id, agent_path(agent))
+
+  %td= truncate(agent.level.to_s, :length => 25)
+
+  %td= truncate(agent.quality.to_s, :length => 25)
+

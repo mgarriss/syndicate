@@ -1,0 +1,12 @@
+%h2
+  inventory category .
+  = @inventory_category.id
+  = '.'
+  %span.back_to= link_to('<<', inventory_categories_path)
+
+
+%div[@inventory_category]
+  %p
+    %label description
+    %span.value= @inventory_category.description
+

@@ -1,0 +1,13 @@
+%tr[graphic]
+  %td= link_to(graphic.id, graphic_path(graphic))
+
+  %td= truncate(graphic.url3D.to_s, :length => 25)
+
+  %td= truncate(graphic.urlWeb.to_s, :length => 25)
+
+  %td= truncate(graphic.description.to_s, :length => 25)
+
+  %td= truncate(graphic.icon.to_s, :length => 25)
+
+  %td= truncate(graphic.urlSound.to_s, :length => 25)
+

@@ -1,0 +1,5 @@
+%tr[inventory_category]
+  %td= link_to(inventory_category.id, inventory_category_path(inventory_category))
+
+  %td= truncate(inventory_category.description.to_s, :length => 25)
+

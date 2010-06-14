@@ -14,7 +14,7 @@
     %span.value= link_to(@constellation.region.regionName.downcase, region_path(@constellation.region))
   %p
     %label systems count
-    %span.value= @systems.count
+    %span.value= @constellation.systems_count
     
   %h3 systems
   = render 'systems/index'

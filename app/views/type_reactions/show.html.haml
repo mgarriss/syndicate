@@ -1,0 +1,16 @@
+%h2
+  type reaction .
+  = @type_reaction.id
+  = '.'
+  %span.back_to= link_to('<<', type_reactions_path)
+
+
+%div[@type_reaction]
+  %p
+    %label input
+    %span.value= @type_reaction.input
+
+  %p
+    %label quantity
+    %span.value= @type_reaction.quantity
+

@@ -1,0 +1,20 @@
+%h2
+  agent config .
+  = @agent_config.id
+  = '.'
+  %span.back_to= link_to('<<', agent_configs_path)
+
+
+%div[@agent_config]
+  %p
+    %label id
+    %span.value= @agent_config.id
+
+  %p
+    %label k
+    %span.value= @agent_config.k
+
+  %p
+    %label v
+    %span.value= @agent_config.v
+

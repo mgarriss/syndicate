@@ -1,0 +1,8 @@
+%table.inventory_categories
+  %tr
+    %th= sort_link(:catagoryID, 'id')
+    %th= sort_link(:catagoryName, 'name')
+  
+    %th= sort_link(:description, 'description')
+  
+  = render @inventory_categories

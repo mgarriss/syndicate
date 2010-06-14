@@ -1,6 +1,5 @@
 %tr[group]
   %td= link_to(group.id, group_path(group))
-  %td= group.groupName.downcase
 
   %td= truncate(group.useBasePrice.to_s, :length => 25)
 

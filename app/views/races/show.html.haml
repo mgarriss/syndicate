@@ -1,0 +1,12 @@
+%h2
+  race .
+  = @race.id
+  = '.'
+  %span.back_to= link_to('<<', races_path)
+
+
+%div[@race]
+  %p
+    %label description
+    %span.value= @race.description
+

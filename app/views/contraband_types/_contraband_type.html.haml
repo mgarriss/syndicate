@@ -1,0 +1,11 @@
+%tr[contraband_type]
+  %td= link_to(contraband_type.id, contraband_type_path(contraband_type))
+
+  %td= truncate(contraband_type.standingLoss.to_s, :length => 25)
+
+  %td= truncate(contraband_type.confiscateMinSec.to_s, :length => 25)
+
+  %td= truncate(contraband_type.fineByValue.to_s, :length => 25)
+
+  %td= truncate(contraband_type.attackMinSec.to_s, :length => 25)
+

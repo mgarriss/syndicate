@@ -1,0 +1,14 @@
+%table.contraband_types
+  %tr
+    %th= sort_link(:contrabandID, 'id')
+    %th= sort_link(:contrabandName, 'name')
+  
+    %th= sort_link(:standingLoss, 'standing loss')
+  
+    %th= sort_link(:confiscateMinSec, 'confiscate min sec')
+  
+    %th= sort_link(:fineByValue, 'fine by value')
+  
+    %th= sort_link(:attachMinSec, 'attach min sec')
+  
+  = render @contraband_types

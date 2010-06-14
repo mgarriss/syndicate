@@ -1,0 +1,18 @@
+%table.bloodlines
+  %tr
+    %th= sort_link(:bloodlineID, 'id')
+    %th= sort_link(:bloodlineName, 'name')
+  
+    %th= sort_link(:perception, 'perception')
+  
+    %th= sort_link(:willpower, 'willpower')
+  
+    %th= sort_link(:charisma, 'charisma')
+  
+    %th= sort_link(:memory, 'memory')
+  
+    %th= sort_link(:intelligence, 'intelligence')
+  
+    %th= sort_link(:description, 'description')
+  
+  = render @bloodlines

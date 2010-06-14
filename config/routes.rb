@@ -1,16 +1,40 @@
 Syndicate::Application.routes.draw do |map|
+  resources :station_types, :only => [:index, :show]
+  resources :stations, :only => [:index, :show]
+  resources :landmarks, :only => [:index, :show]
+  resources :celestial_statistics, :only => [:index, :show]
+  resources :inventory_types, :only => [:index, :show]
+  resources :type_reactions, :only => [:index, :show]
+  resources :type_materials, :only => [:index, :show]
+  resources :meta_types, :only => [:index, :show]
+  resources :meta_groups, :only => [:index, :show]
+  resources :market_groups, :only => [:index, :show]
+  resources :inventory_flags, :only => [:index, :show]
+  resources :inventory_categories, :only => [:index, :show]
+  resources :eve_units, :only => [:index, :show]
+  resources :eve_names, :only => [:index, :show]
+  resources :graphics, :only => [:index, :show]
+  resources :races, :only => [:index, :show]
+  resources :bloodlines, :only => [:index, :show]
+  resources :character_attributes, :only => [:index, :show]
+  resources :ancestries, :only => [:index, :show]
+  # resources :research_agents, :only => [:index, :show]
+  resources :agent_configs, :only => [:index, :show]
+  resources :agents, :only => [:index, :show]
+  resources :agent_types, :only => [:index, :show]
   resources :groups, :only => [:index, :show]
-
   resources :universes, :only => [:index, :show]
-
-  devise_for :users, :admins
-  resources :users
   resources :admins, :only => [:index, :show, :edit, :update]
-  
   resources :regions, :only => [:index, :show]
   resources :constellations, :only => [:index, :show]
   resources :systems, :only => [:index, :show]
   resources :factions, :only => [:index, :show]
+  
+  devise_for :users, :admins
+  resources :users
+
+  # match 'contraband_types/:faction_id,:type_id' => 'contraband_types#show'
+  # match 'contraband_types' => 'contraband_types#ndex'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

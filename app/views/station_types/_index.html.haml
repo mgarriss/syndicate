@@ -1,0 +1,10 @@
+%table.station_types
+  %tr
+    %th= sort_link(:stationID, 'id')
+    %th= sort_link(:stationName, 'name')
+  
+    %th= sort_link(:officeSlots, 'office slots')
+  
+    %th= sort_link(:conquerable, 'conquerable')
+  
+  = render @station_types

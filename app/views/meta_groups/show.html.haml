@@ -1,0 +1,12 @@
+%h2
+  meta group .
+  = @meta_group.id
+  = '.'
+  %span.back_to= link_to('<<', meta_groups_path)
+
+
+%div[@meta_group]
+  %p
+    %label description
+    %span.value= @meta_group.description
+

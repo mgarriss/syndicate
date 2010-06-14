@@ -8,6 +8,7 @@ gem "devise", :git => "git://github.com/plataformatec/devise.git"
 gem 'haml'
 gem 'compass'
 gem 'will_paginate'
+# gem 'composite_primary_keys'
 
 group :development do
   gem "rails3-generators"

@@ -1,0 +1,5 @@
+%tr[meta_group]
+  %td= link_to(meta_group.id, meta_group_path(meta_group))
+
+  %td= truncate(meta_group.description.to_s, :length => 25)
+

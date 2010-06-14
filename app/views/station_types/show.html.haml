@@ -1,0 +1,16 @@
+%h2
+  station type .
+  = @station_type.id
+  = '.'
+  %span.back_to= link_to('<<', station_types_path)
+
+
+%div[@station_type]
+  %p
+    %label office slots
+    %span.value= @station_type.officeSlots
+
+  %p
+    %label conquerable
+    %span.value= @station_type.conquerable
+

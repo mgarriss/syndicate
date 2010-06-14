@@ -1,0 +1,16 @@
+%h2
+  inventory flag .
+  = @inventory_flag.id
+  = '.'
+  %span.back_to= link_to('<<', inventory_flags_path)
+
+
+%div[@inventory_flag]
+  %p
+    %label flag text
+    %span.value= @inventory_flag.flagText
+
+  %p
+    %label flag type
+    %span.value= @inventory_flag.flagType
+

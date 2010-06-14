@@ -1,0 +1,7 @@
+%tr[eve_units]
+  %td= link_to(eve_units.id, eve_units_path(eve_units))
+
+  %td= truncate(eve_units.displayName.to_s, :length => 25)
+
+  %td= truncate(eve_units.description.to_s, :length => 25)
+

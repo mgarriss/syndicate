@@ -1,0 +1,10 @@
+%table.agents
+  %tr
+    %th= sort_link(:agentID, 'id')
+    %th= sort_link(:agentName, 'name')
+  
+    %th= sort_link(:level, 'level')
+  
+    %th= sort_link(:quality, 'quality')
+  
+  = render @agents

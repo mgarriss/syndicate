@@ -1,0 +1,40 @@
+%h2
+  inventory type .
+  = @inventory_type.id
+  = '.'
+  %span.back_to= link_to('<<', inventory_types_path)
+
+
+%div[@inventory_type]
+  %p
+    %label radius
+    %span.value= @inventory_type.radius
+
+  %p
+    %label mass
+    %span.value= @inventory_type.mass
+
+  %p
+    %label volume
+    %span.value= @inventory_type.volume
+
+  %p
+    %label capacity
+    %span.value= @inventory_type.capacity
+
+  %p
+    %label portion size
+    %span.value= @inventory_type.portionSize
+
+  %p
+    %label base price
+    %span.value= @inventory_type.basePrice
+
+  %p
+    %label published
+    %span.value= @inventory_type.published
+
+  %p
+    %label chance of_duplicating
+    %span.value= @inventory_type.chanceOfDuplicating
+

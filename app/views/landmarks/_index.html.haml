@@ -1,0 +1,10 @@
+%table.landmarks
+  %tr
+    %th= sort_link(:landmarkID, 'id')
+    %th= sort_link(:landmarkName, 'name')
+  
+    %th= sort_link(:url2d, 'url2d')
+  
+    %th= sort_link(:description, 'description')
+  
+  = render @landmarks

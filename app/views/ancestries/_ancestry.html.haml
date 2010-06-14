@@ -1,0 +1,15 @@
+%tr[ancestry]
+  %td= link_to(ancestry.id, ancestry_path(ancestry))
+
+  %td= truncate(ancestry.perception.to_s, :length => 25)
+
+  %td= truncate(ancestry.willpower.to_s, :length => 25)
+
+  %td= truncate(ancestry.charisma.to_s, :length => 25)
+
+  %td= truncate(ancestry.memory.to_s, :length => 25)
+
+  %td= truncate(ancestry.intelligence.to_s, :length => 25)
+
+  %td= truncate(ancestry.description.to_s, :length => 25)
+

@@ -1,0 +1,10 @@
+%table.inventory_flags
+  %tr
+    %th= sort_link(:flagID, 'id')
+    %th= sort_link(:flagName, 'name')
+  
+    %th= sort_link(:flagText, 'flag text')
+  
+    %th= sort_link(:flagType, 'flag type')
+  
+  = render @inventory_flags

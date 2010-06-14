@@ -1,0 +1,10 @@
+%table.eve_units
+  %tr
+    %th= sort_link(:unitID, 'id')
+    %th= sort_link(:unitName, 'name')
+  
+    %th= sort_link(:displayName, 'display name')
+  
+    %th= sort_link(:description, 'description')
+  
+  = render @eve_units

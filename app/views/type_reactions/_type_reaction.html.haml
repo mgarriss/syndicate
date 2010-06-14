@@ -1,0 +1,7 @@
+%tr[type_reaction]
+  %td= link_to(type_reaction.id, type_reaction_path(type_reaction))
+
+  %td= truncate(type_reaction.input.to_s, :length => 25)
+
+  %td= truncate(type_reaction.quantity.to_s, :length => 25)
+

@@ -1,0 +1,7 @@
+%tr[agent_config]
+  %td= link_to(agent_config.id, agent_config_path(agent_config))
+
+  %td= truncate(agent_config.k.to_s, :length => 25)
+
+  %td= truncate(agent_config.v.to_s, :length => 25)
+

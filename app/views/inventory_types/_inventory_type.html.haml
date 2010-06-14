@@ -1,0 +1,19 @@
+%tr[inventory_type]
+  %td= link_to(inventory_type.id, inventory_type_path(inventory_type))
+
+  %td= truncate(inventory_type.radius.to_s, :length => 25)
+
+  %td= truncate(inventory_type.mass.to_s, :length => 25)
+
+  %td= truncate(inventory_type.volume.to_s, :length => 25)
+
+  %td= truncate(inventory_type.capacity.to_s, :length => 25)
+
+  %td= truncate(inventory_type.portionSize.to_s, :length => 25)
+
+  %td= truncate(inventory_type.basePrice.to_s, :length => 25)
+
+  %td= truncate(inventory_type.published.to_s, :length => 25)
+
+  %td= truncate(inventory_type.chanceOfDuplicating.to_s, :length => 25)
+

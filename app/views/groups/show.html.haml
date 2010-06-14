@@ -1,15 +1,11 @@
 %h2
   group .
-  = @group.groupName.downcase
+  = @group.id
   = '.'
   %span.back_to= link_to('<<', groups_path)
 
 
 %div[@group]
-  %p
-    %label id
-    %span.value= @group.id
-
   %p
     %label use base_price
     %span.value= @group.useBasePrice

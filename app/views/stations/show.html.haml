@@ -1,0 +1,24 @@
+%h2
+  station .
+  = @station.id
+  = '.'
+  %span.back_to= link_to('<<', stations_path)
+
+
+%div[@station]
+  %p
+    %label security
+    %span.value= @station.security
+
+  %p
+    %label docking cost_per_volume
+    %span.value= @station.dockingCostPerVolume
+
+  %p
+    %label max ship_volume_dockable
+    %span.value= @station.maxShipVolumeDockable
+
+  %p
+    %label office rental_cost
+    %span.value= @station.officeRentalCost
+

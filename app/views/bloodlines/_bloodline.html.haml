@@ -1,0 +1,15 @@
+%tr[bloodline]
+  %td= link_to(bloodline.id, bloodline_path(bloodline))
+
+  %td= truncate(bloodline.perception.to_s, :length => 25)
+
+  %td= truncate(bloodline.willpower.to_s, :length => 25)
+
+  %td= truncate(bloodline.charisma.to_s, :length => 25)
+
+  %td= truncate(bloodline.memory.to_s, :length => 25)
+
+  %td= truncate(bloodline.intelligence.to_s, :length => 25)
+
+  %td= truncate(bloodline.description.to_s, :length => 25)
+

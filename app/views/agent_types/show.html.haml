@@ -1,0 +1,12 @@
+%h2
+  agent type .
+  = @agent_type.id
+  = '.'
+  %span.back_to= link_to('<<', agent_types_path)
+
+
+%div[@agent_type]
+  %p
+    %label id
+    %span.value= @agent_type.id
+

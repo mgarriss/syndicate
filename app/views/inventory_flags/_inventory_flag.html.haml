@@ -1,0 +1,7 @@
+%tr[inventory_flag]
+  %td= link_to(inventory_flag.id, inventory_flag_path(inventory_flag))
+
+  %td= truncate(inventory_flag.flagText.to_s, :length => 25)
+
+  %td= truncate(inventory_flag.flagType.to_s, :length => 25)
+

@@ -1,0 +1,7 @@
+%tr[character_attribute]
+  %td= link_to(character_attribute.id, character_attribute_path(character_attribute))
+
+  %td= truncate(character_attribute.description.to_s, :length => 25)
+
+  %td= truncate(character_attribute.notes.to_s, :length => 25)
+

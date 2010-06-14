@@ -1,0 +1,10 @@
+%table.character_attributes
+  %tr
+    %th= sort_link(:attributeID, 'id')
+    %th= sort_link(:attributeName, 'name')
+  
+    %th= sort_link(:description, 'description')
+  
+    %th= sort_link(:notes, 'notes')
+  
+  = render @character_attributes

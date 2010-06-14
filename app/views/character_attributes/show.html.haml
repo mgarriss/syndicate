@@ -1,0 +1,16 @@
+%h2
+  character attribute .
+  = @character_attribute.id
+  = '.'
+  %span.back_to= link_to('<<', character_attributes_path)
+
+
+%div[@character_attribute]
+  %p
+    %label description
+    %span.value= @character_attribute.description
+
+  %p
+    %label notes
+    %span.value= @character_attribute.notes
+

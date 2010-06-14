@@ -1,0 +1,12 @@
+%h2
+  market group .
+  = @market_group.id
+  = '.'
+  %span.back_to= link_to('<<', market_groups_path)
+
+
+%div[@market_group]
+  %p
+    %label description
+    %span.value= @market_group.description
+

@@ -1,0 +1,36 @@
+%h2
+  ancestry .
+  = @ancestry.id
+  = '.'
+  %span.back_to= link_to('<<', ancestries_path)
+
+
+%div[@ancestry]
+  %p
+    %label id
+    %span.value= @ancestry.id
+
+  %p
+    %label perception
+    %span.value= @ancestry.perception
+
+  %p
+    %label willpower
+    %span.value= @ancestry.willpower
+
+  %p
+    %label charisma
+    %span.value= @ancestry.charisma
+
+  %p
+    %label memory
+    %span.value= @ancestry.memory
+
+  %p
+    %label intelligence
+    %span.value= @ancestry.intelligence
+
+  %p
+    %label description
+    %span.value= @ancestry.description
+

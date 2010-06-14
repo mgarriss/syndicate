@@ -1,7 +1,5 @@
 require 'test_helper'
 
-EveSql.load 'tyr10-mapUniverse-mysql5-v1.sql'
-
 class UniversesControllerTest < ActionController::TestCase
   setup do
     user_sign_in

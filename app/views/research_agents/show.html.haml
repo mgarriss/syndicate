@@ -1,0 +1,12 @@
+%h2
+  research agent .
+  = @research_agent.researchName.downcase
+  = '.'
+  %span.back_to= link_to('<<', research_agents_path)
+
+
+%div[@research_agent]
+  %p
+    %label id
+    %span.value= @research_agent.id
+

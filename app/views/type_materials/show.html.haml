@@ -1,0 +1,12 @@
+%h2
+  type material .
+  = @type_material.id
+  = '.'
+  %span.back_to= link_to('<<', type_materials_path)
+
+
+%div[@type_material]
+  %p
+    %label quantity
+    %span.value= @type_material.quantity
+

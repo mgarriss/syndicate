@@ -1,0 +1,16 @@
+%h2
+  agent .
+  = @agent.id
+  = '.'
+  %span.back_to= link_to('<<', agents_path)
+
+
+%div[@agent]
+  %p
+    %label level
+    %span.value= @agent.level
+
+  %p
+    %label quality
+    %span.value= @agent.quality
+

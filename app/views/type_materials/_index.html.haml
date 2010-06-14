@@ -1,0 +1,8 @@
+%table.type_materials
+  %tr
+    %th= sort_link(:typeID, 'id')
+    %th= sort_link(:typeName, 'name')
+  
+    %th= sort_link(:quantity, 'quantity')
+  
+  = render @type_materials

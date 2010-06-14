@@ -1,0 +1,16 @@
+%h2
+  eve units .
+  = @eve_units.id
+  = '.'
+  %span.back_to= link_to('<<', eve_units_path)
+
+
+%div[@eve_units]
+  %p
+    %label display name
+    %span.value= @eve_units.displayName
+
+  %p
+    %label description
+    %span.value= @eve_units.description
+

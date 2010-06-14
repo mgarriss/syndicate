@@ -1,0 +1,28 @@
+%h2
+  contraband type .
+  = @contraband_type.contrabandName.downcase
+  = '.'
+  %span.back_to= link_to('<<', contraband_types_path)
+
+
+%div[@contraband_type]
+  %p
+    %label id
+    %span.value= @contraband_type.id
+
+  %p
+    %label standing loss
+    %span.value= @contraband_type.standingLoss
+
+  %p
+    %label confiscate min_sec
+    %span.value= @contraband_type.confiscateMinSec
+
+  %p
+    %label fine by_value
+    %span.value= @contraband_type.fineByValue
+
+  %p
+    %label attach min_sec
+    %span.value= @contraband_type.attachMinSec
+

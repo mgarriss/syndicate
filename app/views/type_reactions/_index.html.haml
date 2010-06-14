@@ -1,0 +1,10 @@
+%table.type_reactions
+  %tr
+    %th= sort_link(:typeID, 'id')
+    %th= sort_link(:typeName, 'name')
+  
+    %th= sort_link(:input, 'input')
+  
+    %th= sort_link(:quantity, 'quantity')
+  
+  = render @type_reactions

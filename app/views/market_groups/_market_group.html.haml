@@ -1,0 +1,5 @@
+%tr[market_group]
+  %td= link_to(market_group.id, market_group_path(market_group))
+
+  %td= truncate(market_group.description.to_s, :length => 25)
+

@@ -1,0 +1,32 @@
+%h2
+  bloodline .
+  = @bloodline.id
+  = '.'
+  %span.back_to= link_to('<<', bloodlines_path)
+
+
+%div[@bloodline]
+  %p
+    %label perception
+    %span.value= @bloodline.perception
+
+  %p
+    %label willpower
+    %span.value= @bloodline.willpower
+
+  %p
+    %label charisma
+    %span.value= @bloodline.charisma
+
+  %p
+    %label memory
+    %span.value= @bloodline.memory
+
+  %p
+    %label intelligence
+    %span.value= @bloodline.intelligence
+
+  %p
+    %label description
+    %span.value= @bloodline.description
+
