@@ -1,6 +1,6 @@
 %table.agent_types
   %tr
-    %th= sort_link(:agentID, 'id')
-    %th= sort_link(:agentName, 'name')
+    %th= sort_link(:agentID, 'id', 'agent_types')
+    %th= sort_link(:agentName, 'name', 'agent_types')
   
   = render @agent_types

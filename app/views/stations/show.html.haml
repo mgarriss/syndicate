@@ -1,24 +1,23 @@
 %h2
   station .
-  = @station.id
+  = @station.stationName.downcase
   = '.'
   %span.back_to= link_to('<<', stations_path)
 
 
 %div[@station]
   %p
+    %label id
+    %span.value= @station.id
+  %p
     %label security
-    %span.value= @station.security
-
+    %span.value= @station.system.security.round(2)
   %p
-    %label docking cost_per_volume
-    %span.value= @station.dockingCostPerVolume
-
+    %label region
+    %span.value= link_to(@station.region.regionName.downcase, region_path(@station.region))
   %p
-    %label max ship_volume_dockable
-    %span.value= @station.maxShipVolumeDockable
-
+    %label constellation
+    %span.value= link_to(@station.constellation.constellationName.downcase, constellation_path(@station.constellation))
   %p
-    %label office rental_cost
-    %span.value= @station.officeRentalCost
-
+    %label system
+    %span.value= link_to(@station.system.solarSystemName.downcase, system_path(@station.system))

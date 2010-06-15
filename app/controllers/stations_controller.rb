@@ -2,7 +2,7 @@ class StationsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @stations = Station.order(@sort).paginate(:page => params[:page], :per_page => Station.per_page)
+    @stations = Station.order(@sort['stations']).paginate(:page => params[:page], :per_page => Station.per_page)
   end
   
   def show

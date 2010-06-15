@@ -4,4 +4,8 @@ class Station < ActiveRecord::Base
 
   cattr_reader :per_page
   @@per_page = 180
+  
+  belongs_to :system, :foreign_key => 'solarSystemID'
+  belongs_to :constellation, :foreign_key => 'constellationID'
+  belongs_to :region, :foreign_key => 'regionID'
 end

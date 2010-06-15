@@ -1,12 +1,12 @@
 %table.systems
   %tr
-    %th= sort_link(:systemID, 'id')
-    %th= sort_link(:solarSystemName, 'name')
-    %th= sort_link(:security, 'security')
-    %th= sort_link(:border, 'border')
-    %th= sort_link(:fringe, 'fringe')
-    %th= sort_link(:corridor, 'corridor')
-    %th= sort_link(:hub, 'hub')
-    %th= sort_link(:international, 'inter')
-    %th= sort_link(:regional, 'regional')
+    %th= sort_link(:systemID, 'id', :systems)
+    %th= sort_link(:solarSystemName, 'name', :systems)
+    %th= sort_link(:security, 'security', :systems)
+    %th= sort_link(:border, 'border', :systems)
+    %th= sort_link(:fringe, 'fringe', :systems)
+    %th= sort_link(:corridor, 'corridor', :systems)
+    %th= sort_link(:hub, 'hub', :systems)
+    %th= sort_link(:international, 'inter', :systems)
+    %th= sort_link(:regional, 'regional', :systems)
   = render @systems    

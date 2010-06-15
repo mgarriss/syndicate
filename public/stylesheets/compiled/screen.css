@@ -133,7 +133,7 @@ body.bp form.inline p {
   margin-bottom: 0;
 }
 
-/* line 22, ../../../app/stylesheets/screen.scss */
+/* line 10, ../../../app/stylesheets/screen.scss */
 body.bp {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -507,7 +507,7 @@ form.bp textarea {
   height: 250px;
 }
 
-/* line 36, ../../../app/stylesheets/screen.scss */
+/* line 21, ../../../app/stylesheets/screen.scss */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
@@ -518,7 +518,7 @@ body.two-col #container {
 body.two-col #container {
   display: block;
 }
-/* line 38, ../../../app/stylesheets/screen.scss */
+/* line 23, ../../../app/stylesheets/screen.scss */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -529,7 +529,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 40, ../../../app/stylesheets/screen.scss */
+/* line 25, ../../../app/stylesheets/screen.scss */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -540,7 +540,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 44, ../../../app/stylesheets/screen.scss */
+/* line 28, ../../../app/stylesheets/screen.scss */
 body.two-col #content {
   display: inline;
   float: left;
@@ -562,21 +562,25 @@ body.bp {
   padding: 10px;
   background-color: black;
   color: #aaaaaa;
+  margin-left: 40px;
+  padding-left: 40px;
+  margin-right: 40px;
+  padding-right: 40px;
 }
-/* line 20, ../../../app/stylesheets/partials/_screen.sass */
+/* line 24, ../../../app/stylesheets/partials/_screen.sass */
 body.bp a:link, body.bp a:visited {
   color: #ff6600;
   text-decoration: none;
 }
-/* line 23, ../../../app/stylesheets/partials/_screen.sass */
+/* line 27, ../../../app/stylesheets/partials/_screen.sass */
 body.bp a:hover {
   text-decoration: underline;
 }
-/* line 26, ../../../app/stylesheets/partials/_screen.sass */
+/* line 30, ../../../app/stylesheets/partials/_screen.sass */
 body.bp #content {
   padding-bottom: 20px;
 }
-/* line 29, ../../../app/stylesheets/partials/_screen.sass */
+/* line 33, ../../../app/stylesheets/partials/_screen.sass */
 body.bp h1 {
   color: #aaaaaa;
   margin: 0;
@@ -584,7 +588,16 @@ body.bp h1 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 33, ../../../app/stylesheets/partials/_screen.sass */
+/* line 37, ../../../app/stylesheets/partials/_screen.sass */
+body.bp h1 a:link, body.bp h1 a:visited {
+  color: #aaaaaa;
+  text-decoration: none;
+}
+/* line 40, ../../../app/stylesheets/partials/_screen.sass */
+body.bp h1 a:hover {
+  text-decoration: underline;
+}
+/* line 43, ../../../app/stylesheets/partials/_screen.sass */
 body.bp h2 {
   color: #aaaaaa;
   margin: 0;
@@ -592,7 +605,7 @@ body.bp h2 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 37, ../../../app/stylesheets/partials/_screen.sass */
+/* line 47, ../../../app/stylesheets/partials/_screen.sass */
 body.bp h3 {
   color: #aaaaaa;
   margin: 0;
@@ -600,19 +613,64 @@ body.bp h3 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 43, ../../../app/stylesheets/partials/_screen.sass */
+/* line 53, ../../../app/stylesheets/partials/_screen.sass */
 body.bp form.bp input {
   font-size: 1.1em;
   background-color: #aaaaaa;
   font-weight: bold;
 }
+/* line 58, ../../../app/stylesheets/partials/_screen.sass */
+body.bp ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  overflow: hidden;
+  display: inline-block;
+}
+/* line 11, ../../../../../../.rvm/gems/ree-1.8.7-2010.01@syndicate/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
+body.bp ul li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+}
+/* line 8, ../../../../../../.rvm/gems/ree-1.8.7-2010.01@syndicate/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+body.bp ul {
+  display: block;
+}
+/* line 50, ../../../../../../.rvm/gems/ree-1.8.7-2010.01@syndicate/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+body.bp ul li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+/* line 41, ../../../../../../.rvm/gems/ree-1.8.7-2010.01@syndicate/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+body.bp ul li:first-child, body.bp ul li.first {
+  padding-left: 0px;
+}
+/* line 43, ../../../../../../.rvm/gems/ree-1.8.7-2010.01@syndicate/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+body.bp ul li:last-child, body.bp ul li.last {
+  padding-right: 0px;
+}
+/* line 63, ../../../app/stylesheets/partials/_screen.sass */
+body.bp p label {
+  float: left;
+  width: 200px;
+  font-weight: bold;
+}
 
-/* line 48, ../../../app/stylesheets/partials/_screen.sass */
+/* line 68, ../../../app/stylesheets/partials/_screen.sass */
 .spaced {
   margin: 10px;
 }
 
-/* line 50, ../../../app/stylesheets/partials/_screen.sass */
+/* line 70, ../../../app/stylesheets/partials/_screen.sass */
 .right {
   float: right;
 }

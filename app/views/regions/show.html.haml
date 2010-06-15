@@ -9,6 +9,15 @@
   %p
     %label id
     %span.value= @region.id
+  %p
+    %label security
+    %span.value= @region.security_avg.round(2)
+  %p
+    %label constellation count
+    %span.value= @region.constellations_count
+  %p
+    %label systems count
+    %span.value= @region.systems_count
 
   %h3 constellations  
   = render 'constellations/index'    

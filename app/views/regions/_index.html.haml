@@ -1,8 +1,8 @@
 %table.regions
   %tr
-    %th= sort_link(:regionID, 'id')
-    %th= sort_link(:regionName, 'region')
-    %th= sort_link(:security_avg, 'security')
-    %th= sort_link(:constellations_count, 'constellations')
-    %th= sort_link(:systems_count, 'systems')
+    %th= sort_link(:regionID, 'id', :regions)
+    %th= sort_link(:regionName, 'region', :regions)
+    %th= sort_link(:security_avg, 'security', :regions)
+    %th= sort_link(:constellations_count, 'constellations', :regions)
+    %th= sort_link(:systems_count, 'systems', :regions)
   = render @regions    

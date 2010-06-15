@@ -1,14 +1,6 @@
 %table.stations
   %tr
-    %th= sort_link(:stationID, 'id')
-    %th= sort_link(:stationName, 'name')
-  
-    %th= sort_link(:security, 'security')
-  
-    %th= sort_link(:dockingCostPerVolume, 'docking cost per volume')
-  
-    %th= sort_link(:maxShipVolumeDockable, 'max ship volume dockable')
-  
-    %th= sort_link(:officeRentalCost, 'office rental cost')
+    %th= sort_link(:stationID, 'id', :stations)
+    %th= sort_link(:stationName, 'name', :stations)
   
   = render @stations

@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_order
-    @sort = (params[:sort] ? ActiveRecord::Base.connection.quote_string(params[:sort]) : '')
+    session[:sort] ||= {}
+    session[:sort][params[:sub]] = (params[:sort] ? ActiveRecord::Base.connection.quote_string(params[:sort]) : '')
+    @sort = session[:sort]
   end
 
 end

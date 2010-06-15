@@ -10,6 +10,9 @@
     %label id
     %span.value= @constellation.id
   %p
+    %label security
+    %span.value= @constellation.security_avg.round(2)
+  %p
     %label region
     %span.value= link_to(@constellation.region.regionName.downcase, region_path(@constellation.region))
   %p

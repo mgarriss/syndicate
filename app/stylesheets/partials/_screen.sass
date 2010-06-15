@@ -16,6 +16,10 @@ body.bp
   padding: $thick
   background-color: black
   color: $light-grey
+  margin-left: $thick * 4
+  padding-left: $thick * 4
+  margin-right: $thick * 4
+  padding-right: $thick * 4
   
   a:link, a:visited
     color: $orange
@@ -30,6 +34,12 @@ body.bp
     +setup
     margin-top: $thick
     margin-bottom: $thick
+    a:link, a:visited
+      color: $light-grey
+      text-decoration: none
+    a:hover
+      text-decoration: underline
+
   h2
     +setup
     margin-top: $thick
@@ -43,6 +53,16 @@ body.bp
     input
       font-size: 1.1em
       background-color: $light-grey
+      font-weight: bold
+        
+  ul
+    +no-bullets
+    +horizontal-list
+      
+  p
+    label
+      float: left
+      width: $thick * 20
       font-weight: bold
 
 .spaced

@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def sort_link(column, label=nil, css=nil)
+  def sort_link(column, label, sub)
     column = column.to_s
     css ||= ''
     sort = ''
@@ -12,6 +12,6 @@ module ApplicationHelper
     else
       sort = "#{column} DESC"
     end
-    link_to((label ? label : column), url_for(request.path_parameters.merge({:search => params[:search],:sort => sort})), :class => css)
+    link_to((label ? label : column), url_for(request.path_parameters.merge({:search => params[:search],:sort => sort,:sub => sub})), :class => css)
   end
 end

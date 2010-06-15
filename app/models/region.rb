@@ -4,4 +4,5 @@ class Region < ActiveRecord::Base
   
   has_many :constellations, :foreign_key => 'regionID'
   has_many :systems, :foreign_key => 'regionID'
+  has_many :stations, :foreign_key => 'regionID'
 end

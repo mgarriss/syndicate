@@ -11,10 +11,20 @@
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
     = yield(:head)
-  %body.bp.two-col
+  %body.bp
     #container
       #header
         .right.spaced= render 'shared/links'
-        %h1 syndicate
+        %h1= link_to('syndicate', root_path)
+        %ul
+          %li
+            %h3= link_to('users', users_path) + ' .'
+          %li
+            %h3= link_to('regions', regions_path) + ' .'
+          %li
+            %h3= link_to('systems', systems_path) + ' .'
+          %li
+            %h3= link_to('stations', stations_path) + ' .'
       #content= yield
       #footer
+        -#= session.inspect

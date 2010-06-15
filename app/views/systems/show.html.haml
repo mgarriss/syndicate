@@ -9,4 +9,17 @@
   %p
     %label id
     %span.value= @system.id
+  %p
+    %label security 
+    %span.value= @system.security.round(2)
+  %p
+    %label region
+    %span.value= link_to @system.region.regionName, region_path(@system.region)
+  %p
+    %label constellation
+    %span.value= link_to @system.constellation.constellationName, constellation_path(@system.constellation)
     
+  - unless @stations.empty?
+    %h3 stations  
+    = render 'stations/index'    
+  

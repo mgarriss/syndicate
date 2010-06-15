@@ -1,8 +1,8 @@
 %table.constellations
   %tr
-    %th= sort_link(:constellationID, 'id')
-    %th= sort_link(:constellationName, 'name')
-    %th= sort_link(:security_avg, 'security')
-    %th= sort_link(:system_count, 'system count')
+    %th= sort_link(:constellationID, 'id', :constellations)
+    %th= sort_link(:constellationName, 'name', :constellations)
+    %th= sort_link(:security_avg, 'security', :constellations)
+    %th= sort_link(:system_count, 'system count', :constellations)
   = render @constellations    
   
