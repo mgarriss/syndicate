@@ -7,7 +7,7 @@ gem 'ruby-debug'
 gem "devise", :git => "git://github.com/plataformatec/devise.git"
 gem 'haml'
 gem 'compass'
-gem 'will_paginate'
+gem 'will_paginate', :git => 'http://github.com/mislav/will_paginate.git', :branch => 'rails3'
 # gem 'composite_primary_keys'
 
 group :development do

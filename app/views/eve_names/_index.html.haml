@@ -1,6 +1,6 @@
 %table.eve_names
   %tr
-    %th= sort_link(:nameID, 'id')
-    %th= sort_link(:nameName, 'name')
+    %th= sort_link(:nameID, 'id', :eve_names)
+    %th= sort_link(:nameName, 'name', :eve_names)
   
   = render @eve_names

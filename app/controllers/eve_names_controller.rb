@@ -2,7 +2,7 @@ class EveNamesController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @eve_names = EveName.order(@sort).paginate(:page => params[:page], :per_page => EveName.per_page)
+    @eve_names = EveName.order(@sort['eve_names']).paginate(:page => params[:page], :per_page => EveName.per_page)
   end
   
   def show
