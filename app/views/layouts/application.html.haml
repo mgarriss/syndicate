@@ -18,13 +18,15 @@
         %h1= link_to('syndicate', root_path)
         %ul
           %li
-            %h3= link_to('users', users_path) + ' .'
+            %h3= link_to('users', users_path) + ' |'
           %li
             %h3= link_to('regions', regions_path) + ' .'
           %li
             %h3= link_to('systems', systems_path) + ' .'
           %li
-            %h3= link_to('stations', stations_path) + ' .'
+            %h3= link_to('stations', stations_path) + ' |'
+          %li
+            %h3= link_to('item types', inventory_types_path) + ' .'
       #content= yield
       #footer
         -#= session.inspect
