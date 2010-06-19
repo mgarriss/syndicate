@@ -1,5 +1,5 @@
 %tr[race]
   %td= link_to(race.id, race_path(race))
-
-  %td= truncate(race.description.to_s, :length => 25)
+  %td= race.raceName
+  %td= truncate(race.description, :length => 125)
 

@@ -1,8 +1,7 @@
 %table.races
   %tr
-    %th= sort_link(:raceID, 'id')
-    %th= sort_link(:raceName, 'name')
-  
-    %th= sort_link(:description, 'description')
+    %th= sort_link(:raceID, 'id', 'races')
+    %th= sort_link(:raceName, 'name', 'races')
+    %th= sort_link(:description, 'description', 'races')
   
   = render @races
