@@ -18,7 +18,7 @@ CREATE TABLE `admins` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_admins_on_email` (`email`),
   UNIQUE KEY `index_admins_on_unlock_token` (`unlock_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `agtAgentTypes` (
   `agentTypeID` tinyint(3) unsigned NOT NULL,

@@ -2,7 +2,7 @@ class RegionsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @regions = Region.order(@sort[:main]).all
+    @regions = Region.order(@sort['regions']).all
   end
   
   def show
