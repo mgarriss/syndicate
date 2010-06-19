@@ -12,6 +12,7 @@ gem 'will_paginate', :git => 'http://github.com/mislav/will_paginate.git', :bran
 
 group :development do
   gem "rails3-generators"
+  gem 'wirble'
 end
 
 group :test do
