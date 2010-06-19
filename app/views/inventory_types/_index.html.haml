@@ -1,22 +1,22 @@
 %table.inventory_types
   %tr
-    %th= sort_link(:typeID, 'id')
-    %th= sort_link(:typeName, 'name')
+    %th= sort_link(:typeID, 'id', 'inventory_types')
+    %th= sort_link(:typeName, 'name', 'inventory_types')
   
-    %th= sort_link(:radius, 'radius')
+    %th= sort_link(:radius, 'radius', 'inventory_types')
   
-    %th= sort_link(:mass, 'mass')
+    %th= sort_link(:mass, 'mass', 'inventory_types')
   
-    %th= sort_link(:volume, 'volume')
+    %th= sort_link(:volume, 'volume', 'inventory_types')
   
-    %th= sort_link(:capacity, 'capacity')
+    %th= sort_link(:capacity, 'capacity', 'inventory_types')
   
-    %th= sort_link(:portionSize, 'portion size')
+    %th= sort_link(:portionSize, 'portion size', 'inventory_types')
   
-    %th= sort_link(:basePrice, 'base price')
+    %th= sort_link(:basePrice, 'base price', 'inventory_types')
   
-    %th= sort_link(:published, 'published')
+    %th= sort_link(:published, 'published', 'inventory_types')
   
-    %th= sort_link(:chanceOfDuplicating, 'chance of duplicating')
+    %th= sort_link(:chanceOfDuplicating, 'duplicating %', 'inventory_types')
   
   = render @inventory_types
