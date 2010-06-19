@@ -1,13 +1,11 @@
 %tr[inventory_type]
   %td= link_to(inventory_type.id, inventory_type_path(inventory_type))
-  %td= truncate(inventory_type.typeName.downcase, :length => 48)
-  %td= link_to(truncate(inventory_type.group.groupName.downcase, :length => 48), group_path(inventory_type.group))
-  %td= number_with_delimiter(inventory_type.radius)
-  %td= number_with_delimiter(inventory_type.mass)
+  %td= truncate(inventory_type.typeName.downcase, :length => 38)
+  %td= link_to(truncate(inventory_type.inventory_category.categoryName.downcase, :length => 38), inventory_category_path(inventory_type.inventory_category))
+  %td= link_to(truncate(inventory_type.group.groupName.downcase, :length => 38), group_path(inventory_type.group))
+  %td= inventory_type.parent ? link_to(inventory_type.parent.typeName.downcase, inventory_type_path(inventory_type.parent)) : ''
+  %td= (inventory_type.race ? link_to(inventory_type.race.raceName.downcase, race_path(inventory_type.race)) : '')
   %td= number_with_delimiter(inventory_type.volume)
   %td= number_with_delimiter(inventory_type.capacity)
-  %td= number_with_delimiter(inventory_type.portionSize)
   %td= number_with_delimiter(inventory_type.basePrice)
-  %td= inventory_type.published
-  %td= inventory_type.chanceOfDuplicating
 

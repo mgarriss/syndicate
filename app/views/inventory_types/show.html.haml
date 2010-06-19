@@ -11,6 +11,9 @@
     %span.value= @inventory_type.id
 
   %p
+    %label category
+    %span.value= link_to(@inventory_type.inventory_category.categoryName.downcase, inventory_category_path(@inventory_type.inventory_category))
+  %p
     %label group
     %span.value= link_to(@inventory_type.group.groupName.downcase, group_path(@inventory_type.group))
 
@@ -45,4 +48,12 @@
   %p
     %label chance of_duplicating
     %span.value= @inventory_type.chanceOfDuplicating
+
+  %p
+    %label parent
+    %span.value= @inventory_type.parent ? link_to(@inventory_type.parent.typeName.downcase, inventory_type_path(@inventory_type.parent)) : ''
+    
+  - unless @inventory_types.empty?
+    %h3 child types
+    = render 'inventory_types/index'
 
