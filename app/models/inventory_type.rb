@@ -4,4 +4,6 @@ class InventoryType < ActiveRecord::Base
 
   cattr_reader :per_page
   @@per_page = 180
+  
+  belongs_to :group, :foreign_key => 'groupID'
 end
