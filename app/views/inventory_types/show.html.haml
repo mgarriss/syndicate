@@ -1,11 +1,19 @@
 %h2
   inventory type .
-  = @inventory_type.id
+  = @inventory_type.typeName.downcase
   = '.'
   %span.back_to= link_to('<<', inventory_types_path)
 
 
 %div[@inventory_type]
+  %p
+    %label id
+    %span.value= @inventory_type.id
+
+  %p
+    %label group
+    %span.value= link_to(@inventory_type.group.groupName.downcase, group_path(@inventory_type.group))
+
   %p
     %label radius
     %span.value= @inventory_type.radius
