@@ -6,4 +6,5 @@ class Group < ActiveRecord::Base
   @@per_page = 180
   
   has_many :inventory_types, :foreign_key => 'groupID'
+  belongs_to :inventory_category, :foreign_key => 'categoryID'
 end

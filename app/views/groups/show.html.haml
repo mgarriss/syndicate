@@ -11,6 +11,10 @@
     %span.value= @group.id
 
   %p
+    %label category
+    %span.value= link_to(@group.inventory_category.categoryName.downcase, inventory_category_path(@group.inventory_category))
+
+  %p
     %label use base price
     %span.value= @group.useBasePrice
 

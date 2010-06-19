@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
   end
   
   def show
-    @group = Group.includes(:inventory_types).find(params[:id])
+    @group = Group.includes(:inventory_category).includes(:inventory_types).find(params[:id])
     @inventory_types = @group.inventory_types.order(@sort['inventory_types'])
   end
 end
