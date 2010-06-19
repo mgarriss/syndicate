@@ -1,12 +1,12 @@
 %table.groups
   %tr
-    %th= sort_link(:groupID, 'id')
-    %th= sort_link(:groupName, 'name')
+    %th= sort_link(:groupID, 'id', 'groups')
+    %th= sort_link(:groupName, 'name', 'groups')
   
-    %th= sort_link(:useBasePrice, 'use base price')
+    %th= sort_link(:useBasePrice, 'use base price', 'groups')
   
-    %th= sort_link(:allowManufacture, 'allow manufacture')
+    %th= sort_link(:allowManufacture, 'allow manufacture', 'groups')
   
-    %th= sort_link(:description, 'description')
+    %th= sort_link(:description, 'description', 'groups')
   
   = render @groups

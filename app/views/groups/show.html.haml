@@ -1,13 +1,17 @@
 %h2
   group .
-  = @group.id
+  = @group.groupName.downcase
   = '.'
   %span.back_to= link_to('<<', groups_path)
 
 
 %div[@group]
   %p
-    %label use base_price
+    %label id
+    %span.value= @group.id
+
+  %p
+    %label use base price
     %span.value= @group.useBasePrice
 
   %p
@@ -17,4 +21,9 @@
   %p
     %label description
     %span.value= @group.description
+    
+  %br
+  
+  %h3 inventory types
+  = render 'inventory_types/index'    
 

@@ -1,9 +1,11 @@
 %tr[group]
   %td= link_to(group.id, group_path(group))
 
-  %td= truncate(group.useBasePrice.to_s, :length => 25)
+  %td= truncate(group.groupName, :length => 48)
+  
+  %td= number_with_delimiter(group.useBasePrice)
 
-  %td= truncate(group.allowManufacture.to_s, :length => 25)
+  %td= group.allowManufacture
 
-  %td= truncate(group.description.to_s, :length => 25)
+  %td= truncate(group.description.to_s, :length => 65)
 
