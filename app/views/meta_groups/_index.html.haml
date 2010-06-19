@@ -1,8 +1,7 @@
 %table.meta_groups
   %tr
-    %th= sort_link(:metaID, 'id')
-    %th= sort_link(:metaName, 'name')
-  
-    %th= sort_link(:description, 'description')
+    %th= sort_link(:metaID, 'id', 'meta_groups')
+    %th= sort_link(:metaGroupName, 'name', 'meta_groups')
+    %th= sort_link(:description, 'description', 'meta_groups')
   
   = render @meta_groups
