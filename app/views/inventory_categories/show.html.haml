@@ -1,12 +1,23 @@
 %h2
   inventory category .
-  = @inventory_category.id
+  = @inventory_category.categoryName.downcase
   = '.'
   %span.back_to= link_to('<<', inventory_categories_path)
 
 
 %div[@inventory_category]
   %p
-    %label description
-    %span.value= @inventory_category.description
+    %label id
+    %span.value= @inventory_category.id
 
+  %p
+    %label description
+    %span.value.description= @inventory_category.description
+
+  %br
+    
+  %h3 groups
+  = render 'groups/index'
+  
+  %h3 inventory types
+  = render 'inventory_types/index'
