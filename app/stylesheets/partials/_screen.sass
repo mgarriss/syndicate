@@ -69,3 +69,13 @@ body.bp
   margin: $thick
 .right
   float: right
+    
+table
+  $table-color : $light-grey
+  +table-scaffolding
+  +inner-table-borders(1px, darken($table-color, 40%))
+  +outer-table-borders(2px, darken($table-color, 40%))
+  +alternating-rows-and-columns($table-color, adjust-hue($table-color, -120deg), #222)
+  tr
+    th
+      background-color: black !important

@@ -8,6 +8,8 @@ gem 'activerecord-jdbcmysql-adapter'
 gem 'jruby-openssl'
 gem 'warden'
 gem "devise", "1.1.rc2" #, :git => "git://github.com/plataformatec/devise.git"
+gem 'neo4j'
+gem 'mongrel'
 # gem "cancan"
 # gem 'mysql'
 # gem 'unicorn'

@@ -1,5 +1,5 @@
 --- 
-hash: 0fa9d40125e777d383515db066d71e334709d4b6
+hash: 96c2f255c205ee7bc63a15294ffbf8b73e9dc8e3
 sources: 
   - Git: 
       git: http://github.com/thoughtbot/shoulda.git
@@ -80,8 +80,14 @@ specs:
       version: 0.10.7
   - devise: 
       version: 1.1.rc2
+  - gem_plugin: 
+      version: 0.2.3
   - jruby-openssl: 
       version: "0.7"
+  - mongrel: 
+      version: 1.1.5
+  - neo4j: 
+      version: 0.4.3
   - weakling: 
       version: 0.0.4
   - nokogiri: 
@@ -135,6 +141,14 @@ dependencies:
       - :default
   devise: 
     version: = 1.1.rc2
+    group: 
+      - :default
+  neo4j: 
+    version: ">= 0"
+    group: 
+      - :default
+  mongrel: 
+    version: ">= 0"
     group: 
       - :default
   ruby-debug: 

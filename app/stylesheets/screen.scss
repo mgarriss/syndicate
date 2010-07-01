@@ -6,6 +6,7 @@
 
 @import "compass/utilities/lists";
 @import "compass/utilities/lists/inline-list";
+@import "compass/utilities/tables";
 
 body.bp {
   @include blueprint-typography(true);
