@@ -3,6 +3,7 @@
   %td= truncate(inventory_type.typeName.downcase, :length => 38)
   %td= link_to(truncate(inventory_type.inventory_category.categoryName.downcase, :length => 38), inventory_category_path(inventory_type.inventory_category))
   %td= link_to(truncate(inventory_type.group.groupName.downcase, :length => 38), group_path(inventory_type.group))
+  %td= inventory_type.meta_group ? inventory_type.meta_group.metaGroupName.downcase : ''
   %td= inventory_type.parent ? link_to(inventory_type.parent.typeName.downcase, inventory_type_path(inventory_type.parent)) : ''
   %td= (inventory_type.race ? link_to(inventory_type.race.raceName.downcase, race_path(inventory_type.race)) : '')
   %td= number_with_delimiter(inventory_type.volume)

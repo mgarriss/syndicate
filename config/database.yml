@@ -2,14 +2,14 @@
 
 development:
     database: syndicate_dev 
-    adapter: mysql  
+    adapter: jdbcmysql  
     hostname: localhost 
     username: root 
     password:
       
 test:
     database: syndicate_test
-    adapter: mysql
+    adapter: jdbcmysql
     hostname: localhost
     username: root
     password:

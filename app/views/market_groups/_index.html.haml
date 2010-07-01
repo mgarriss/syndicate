@@ -1,8 +1,7 @@
 %table.market_groups
   %tr
-    %th= sort_link(:marketID, 'id')
-    %th= sort_link(:marketName, 'name')
-  
-    %th= sort_link(:description, 'description')
+    %th= sort_link(:marketID, 'id', 'market_groups')
+    %th= sort_link(:marketName, 'name', 'market_groups')
+    %th= sort_link(:description, 'description', 'market_groups')
   
   = render @market_groups

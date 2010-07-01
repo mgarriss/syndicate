@@ -8,6 +8,8 @@ class InventoryType < ActiveRecord::Base
   belongs_to :race, :foreign_key => 'raceID'
   belongs_to :group, :foreign_key => 'groupID'
   
+  has_one :meta_group, :through => :meta_type, :foreign_key => 'metaGroupID'
+  
   has_one :meta_type, :foreign_key => 'typeID'
   has_many :meta_types, :foreign_key => 'parentTypeID'
   

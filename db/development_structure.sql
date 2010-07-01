@@ -1,24 +1,24 @@
 CREATE TABLE `admins` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `encrypted_password` varchar(128) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `password_salt` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `remember_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) NOT NULL DEFAULT '',
+  `encrypted_password` varchar(128) NOT NULL DEFAULT '',
+  `password_salt` varchar(255) NOT NULL DEFAULT '',
+  `remember_token` varchar(255) DEFAULT NULL,
   `remember_created_at` datetime DEFAULT NULL,
-  `sign_in_count` int(11) DEFAULT '0',
+  `sign_in_count` int(10) DEFAULT '0',
   `current_sign_in_at` datetime DEFAULT NULL,
   `last_sign_in_at` datetime DEFAULT NULL,
-  `current_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `last_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `failed_attempts` int(11) DEFAULT '0',
-  `unlock_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `current_sign_in_ip` varchar(255) DEFAULT NULL,
+  `last_sign_in_ip` varchar(255) DEFAULT NULL,
+  `failed_attempts` int(10) DEFAULT '0',
+  `unlock_token` varchar(255) DEFAULT NULL,
   `locked_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_admins_on_email` (`email`),
   UNIQUE KEY `index_admins_on_unlock_token` (`unlock_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `agtAgentTypes` (
   `agentTypeID` tinyint(3) unsigned NOT NULL,
@@ -287,30 +287,6 @@ CREATE TABLE `invTypes` (
   KEY `marketGroupID` (`marketGroupID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE `mapCelestialStatistics` (
-  `celestialID` int(11) NOT NULL,
-  `temperature` double DEFAULT NULL,
-  `spectralClass` varchar(10) DEFAULT NULL,
-  `luminosity` double DEFAULT NULL,
-  `age` double DEFAULT NULL,
-  `life` double DEFAULT NULL,
-  `orbitRadius` double DEFAULT NULL,
-  `eccentricity` double DEFAULT NULL,
-  `massDust` double DEFAULT NULL,
-  `massGas` double DEFAULT NULL,
-  `fragmented` tinyint(1) DEFAULT NULL,
-  `density` double DEFAULT NULL,
-  `surfaceGravity` double DEFAULT NULL,
-  `escapeVelocity` double DEFAULT NULL,
-  `orbitPeriod` double DEFAULT NULL,
-  `rotationRate` double DEFAULT NULL,
-  `locked` tinyint(1) DEFAULT NULL,
-  `pressure` double DEFAULT NULL,
-  `radius` double DEFAULT NULL,
-  `mass` double DEFAULT NULL,
-  PRIMARY KEY (`celestialID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
 CREATE TABLE `mapConstellationJumps` (
   `fromRegionID` int(11) DEFAULT NULL,
   `fromConstellationID` int(11) NOT NULL,
@@ -337,8 +313,8 @@ CREATE TABLE `mapConstellations` (
   `zMax` double DEFAULT NULL,
   `factionID` int(11) DEFAULT NULL,
   `radius` double DEFAULT NULL,
-  `systems_count` int(11) DEFAULT NULL,
-  `security_avg` double DEFAULT NULL,
+  `systems_count` int(10) DEFAULT NULL,
+  `security_avg` float DEFAULT NULL,
   PRIMARY KEY (`constellationID`),
   UNIQUE KEY `constellationID` (`constellationID`,`regionID`),
   KEY `mapConstellations_IX_region` (`regionID`),
@@ -395,9 +371,9 @@ CREATE TABLE `mapRegions` (
   `zMax` double DEFAULT NULL,
   `factionID` int(11) DEFAULT NULL,
   `radius` double DEFAULT NULL,
-  `constellations_count` int(11) DEFAULT NULL,
-  `systems_count` int(11) DEFAULT NULL,
-  `security_avg` double DEFAULT NULL,
+  `constellations_count` int(10) DEFAULT NULL,
+  `systems_count` int(10) DEFAULT NULL,
+  `security_avg` float DEFAULT NULL,
   PRIMARY KEY (`regionID`),
   KEY `factionID` (`factionID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -469,9 +445,20 @@ CREATE TABLE `mapUniverse` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `schema_migrations` (
-  `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `version` varchar(255) NOT NULL,
   UNIQUE KEY `unique_schema_migrations` (`version`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `sessions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `session_id` varchar(255) NOT NULL,
+  `data` text,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_sessions_on_session_id` (`session_id`),
+  KEY `index_sessions_on_updated_at` (`updated_at`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `staOperationServices` (
   `operationID` tinyint(3) unsigned NOT NULL,
@@ -562,19 +549,19 @@ CREATE TABLE `staStations` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `encrypted_password` varchar(128) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `password_salt` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `reset_password_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `remember_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) NOT NULL DEFAULT '',
+  `encrypted_password` varchar(128) NOT NULL DEFAULT '',
+  `password_salt` varchar(255) NOT NULL DEFAULT '',
+  `reset_password_token` varchar(255) DEFAULT NULL,
+  `remember_token` varchar(255) DEFAULT NULL,
   `remember_created_at` datetime DEFAULT NULL,
-  `sign_in_count` int(11) DEFAULT '0',
+  `sign_in_count` int(10) DEFAULT '0',
   `current_sign_in_at` datetime DEFAULT NULL,
   `last_sign_in_at` datetime DEFAULT NULL,
-  `current_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `last_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `failed_attempts` int(11) DEFAULT '0',
-  `unlock_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `current_sign_in_ip` varchar(255) DEFAULT NULL,
+  `last_sign_in_ip` varchar(255) DEFAULT NULL,
+  `failed_attempts` int(10) DEFAULT '0',
+  `unlock_token` varchar(255) DEFAULT NULL,
   `locked_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -582,8 +569,10 @@ CREATE TABLE `users` (
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`),
   UNIQUE KEY `index_users_on_unlock_token` (`unlock_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO schema_migrations (version) VALUES ('20100612151116');
 
 INSERT INTO schema_migrations (version) VALUES ('20100612172415');
+
+INSERT INTO schema_migrations (version) VALUES ('20100619144801');

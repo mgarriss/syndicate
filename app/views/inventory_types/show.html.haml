@@ -16,6 +16,11 @@
   %p
     %label group
     %span.value= link_to(@inventory_type.group.groupName.downcase, group_path(@inventory_type.group))
+    
+  - if @inventory_type.meta_group
+    %p
+      %label meta group
+      %span.value= @inventory_type.meta_group.metaGroupName.downcase
 
   %p
     %label radius
@@ -54,6 +59,7 @@
     %span.value= @inventory_type.parent ? link_to(@inventory_type.parent.typeName.downcase, inventory_type_path(@inventory_type.parent)) : ''
     
   - unless @inventory_types.empty?
+    %br
     %h3 child types
     = render 'inventory_types/index'
 

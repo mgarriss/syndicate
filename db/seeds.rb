@@ -9,14 +9,17 @@ Dir[File.join(Rails.root,'db','eve',APP_CONFIG['eve_version']) + "/*.sql"].each 
   EveSql.load_absolute file
 end
 
-conn = ActiveRecord::Base.connection
+class AddSystemCounts < ActiveRecord::Migration
+  def self.up
+    add_column :mapRegions, :constellations_count, :integer
+    add_column :mapRegions, :systems_count, :integer
+    add_column :mapRegions, :security_avg, :float
 
-conn.add_column :mapRegions, :constellations_count, :integer
-conn.add_column :mapRegions, :systems_count, :integer
-
-conn.add_column :mapConstellations, :systems_count, :integer
-conn.add_column :mapRegions, :security_avg, :double
-conn.add_column :mapConstellations, :security_avg, :double
+    add_column :mapConstellations, :systems_count, :integer
+    add_column :mapConstellations, :security_avg, :float
+  end
+end
+AddSystemCounts.up
 
 Region.reset_column_information
 Constellation.reset_column_information
@@ -25,11 +28,11 @@ Region.all.each do |region|
   region.constellations_count = region.constellations.count
   region.systems_count = region.systems.count
   region.security_avg = region.systems.sum(:security) / region.systems_count
-  region.save
+  region.save!
 end
 
 Constellation.all.each do |constellation|
   constellation.systems_count = constellation.systems.count
   constellation.security_avg = constellation.systems.sum(:security) / constellation.systems_count
-  constellation.save
+  constellation.save!
 end
