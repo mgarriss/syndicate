@@ -37,24 +37,31 @@ Constellation.find_each do |constellation|
   constellation.save!
 end
 
-Neo4j::BatchInserter.new do |b|
-  puts "neo4j: removing nodes..."
-  # Neo4j.all_nodes{|node| node.del}
-  
-  puts "neo4j: adding system nodes..."
-  System.find_each do |system|
-    Node::System.new :solarSystemID => system.solarSystemID,
-                     :solarSystemName => system.solarSystemName
+puts "neo4j: removing nodes..."
+begin
+  Neo4j.all_nodes do |node|
+    node.del
+    puts "deleted node: #{node}"
   end
-  
-  puts "neo4j: adding jumps..."
-  File.open(File.expand_path( '../../db/eve/tyr10/neo4j/', __FILE__) + '/system_jumps.csv').readlines.each do |line|
-    from_id, to_id = line.split(',')
-    puts from_id
-    puts to_id
-    puts Node::System.find(:solarSystemID => from_id.to_i)
-    puts Node::System.find(:solarSystemID => to_id.to_i)
-    Node::System.find(:solarSystemID => from_id.to_i).first.jumps <<
-      Node::System.find(:solarSystemID => to_id.to_i).first
-  end
+rescue org.neo4j.graphdb.NotFoundException => e
+  p e
 end
+
+#Neo4j::BatchInserter.new do |b|
+Neo4j::Transaction.new
+puts "neo4j: adding system nodes..."
+System.find_each do |system|
+  Node::System.new :solarSystemID => system.solarSystemID,
+                   :solarSystemName => system.solarSystemName.downcase
+end
+Neo4j::Transaction.finish
+
+Neo4j::Transaction.new
+puts "neo4j: adding jumps..."
+File.open(File.expand_path( '../../db/eve/tyr10/neo4j/', __FILE__) + '/system_jumps.csv').readlines.each do |line|
+  from_id, to_id = line.split(',')
+  Node::System.find(:solarSystemID => from_id.to_i).first.jumps <<
+    Node::System.find(:solarSystemID => to_id.to_i).first
+end
+Neo4j::Transaction.finish
+#end
