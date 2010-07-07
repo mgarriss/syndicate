@@ -1,5 +1,5 @@
 --- 
-hash: 96c2f255c205ee7bc63a15294ffbf8b73e9dc8e3
+hash: 28fa2b48c2bcd50c38aad720a568c863ad7c8c33
 sources: 
   - Git: 
       git: http://github.com/thoughtbot/shoulda.git
@@ -99,7 +99,7 @@ specs:
   - rails: 
       version: 3.0.0.beta4
   - rails3-generators: 
-      version: 0.9.2
+      version: 0.10.1
   - ruby-debug-base: 
       version: 0.10.3.2
   - ruby-debug: 

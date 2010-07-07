@@ -54,4 +54,9 @@ module Syndicate
   end
 end
 
+module Node; end
+Dir[File.expand_path( '../../app/neo4j/nodes', __FILE__) + "/*.rb"].each do |file|
+  load file
+end
+
 APP_CONFIG = YAML.load_file(File.join( Rails.root, 'config', "config.#{Rails.env}.yml"))

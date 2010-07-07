@@ -4,7 +4,7 @@ APP_CONFIG['admins'].each do |admin|
   Admin.create(admin) rescue (puts "not adding: #{admin['email']}")
 end
 
-Dir[File.join(Rails.root,'db','eve',APP_CONFIG['eve_version']) + "/*.sql"].each do |file|
+Dir[File.join(Rails.root,'db','eve',APP_CONFIG['eve_version']) + "/mysql/*.sql"].each do |file|
   puts "loading: #{File.basename(file)}"
   EveSql.load_absolute file
 end
@@ -24,15 +24,37 @@ AddSystemCounts.up
 Region.reset_column_information
 Constellation.reset_column_information
 
-Region.all.each do |region|
+Region.find_each do |region|
   region.constellations_count = region.constellations.count
   region.systems_count = region.systems.count
   region.security_avg = region.systems.sum(:security) / region.systems_count
   region.save!
 end
 
-Constellation.all.each do |constellation|
+Constellation.find_each do |constellation|
   constellation.systems_count = constellation.systems.count
   constellation.security_avg = constellation.systems.sum(:security) / constellation.systems_count
   constellation.save!
+end
+
+Neo4j::BatchInserter.new do |b|
+  puts "neo4j: removing nodes..."
+  # Neo4j.all_nodes{|node| node.del}
+  
+  puts "neo4j: adding system nodes..."
+  System.find_each do |system|
+    Node::System.new :solarSystemID => system.solarSystemID,
+                     :solarSystemName => system.solarSystemName
+  end
+  
+  puts "neo4j: adding jumps..."
+  File.open(File.expand_path( '../../db/eve/tyr10/neo4j/', __FILE__) + '/system_jumps.csv').readlines.each do |line|
+    from_id, to_id = line.split(',')
+    puts from_id
+    puts to_id
+    puts Node::System.find(:solarSystemID => from_id.to_i)
+    puts Node::System.find(:solarSystemID => to_id.to_i)
+    Node::System.find(:solarSystemID => from_id.to_i).first.jumps <<
+      Node::System.find(:solarSystemID => to_id.to_i).first
+  end
 end

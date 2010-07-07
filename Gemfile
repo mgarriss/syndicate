@@ -1,18 +1,14 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.beta4'
-# gem 'datamapper'
 gem 'jdbc-mysql'
 gem 'activerecord-jdbc-adapter'
 gem 'activerecord-jdbcmysql-adapter'
 gem 'jruby-openssl'
 gem 'warden'
-gem "devise", "1.1.rc2" #, :git => "git://github.com/plataformatec/devise.git"
+gem "devise", "1.1.rc2"
 gem 'neo4j'
 gem 'mongrel'
-# gem "cancan"
-# gem 'mysql'
-# gem 'unicorn'
 gem 'ruby-debug'
 gem 'haml'
 gem 'compass'

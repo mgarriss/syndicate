@@ -1,5 +1,5 @@
 module EveSql
-  ROOT = File.join(Rails.root,'db','eve',APP_CONFIG['eve_version'])
+  ROOT = File.join(Rails.root,'db','eve',APP_CONFIG['eve_version'],'mysql')
   
   def self.load file
     load_absolute File.join(ROOT,file)
