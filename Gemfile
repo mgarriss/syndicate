@@ -7,7 +7,7 @@ gem 'activerecord-jdbcmysql-adapter'
 gem 'jruby-openssl'
 gem 'warden'
 gem "devise", "1.1.rc2"
-gem 'neo4j'
+gem 'neo4j' #, :git => 'http://github.com/andreasronge/neo4j.git'
 gem 'mongrel'
 gem 'ruby-debug'
 gem 'haml'

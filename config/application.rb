@@ -54,7 +54,21 @@ module Syndicate
   end
 end
 
-module Node; end
+Lucene::Config[:store_on_file] = true
+Lucene::Config[:storage_path] = '.db/lucene-db'
+Neo4j::Config[:storage_path] = "./db/neo4j"
+Neo4j.stop
+Neo4j.start rescue nil
+Neo4j.info
+
+at_exit do
+  Neo4j.stop
+end
+
+#require 'neo4j/extensions/activemodel'
+#require 'neo4j/extensions/reindexer'
+
+# module Node; end
 Dir[File.expand_path( '../../app/neo4j/nodes', __FILE__) + "/*.rb"].each do |file|
   load file
 end
